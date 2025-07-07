@@ -1,0 +1,224 @@
+file pembelajaran JavaScript ini sudah ada dari 2024 bulan 7
+
+
+(short cut)
+- fn + f12  = buat buka inspek
+- copy taro bawah ctrl+shift+D
+
+DAFTAR ISI
+
+################### POINT 2 ###################
+
+1. MATERI NILAI & TIPE DATA
+
+2. OPERATOR
+
+- operator aritmatika
+- operator penugasan / assignment
+- operator perbandingan / comparasion
+- operator logika / Logical
+- operator string
+- operator typeof
+- operator kondisional
+
+3. STRING
+
+- contoh penggunaan \'
+- penutup kutip
+
+4. BOOLEAN
+
+- menentukan true or false
+
+BANYAK BERADA DI FOLDER IMG
+
+################### POINT 3 ###################
+
+1. VARIABEL
+
+################### POINT 4 ###################
+
+1. MENULIS JAVA SCRIPT
+
+################### POINT 5 ###################
+
+1. POP UP BOX
+
+################### POINT 6 ################### 0. CONTROL FLOW
+
+- normal flow
+- pengulangan
+  > if
+  > while
+  > do while
+- pengkondisian
+  > if
+  > if.. else
+  > if.. else if.. else
+  > switch
+
+1. PENGULANGAN WHILE PADA JAVASCRIPT
+
+- menghentikan aksi dilakukan oleh user:
+- menghentikan aksi dilakukan oleh program
+- membuat text halo 1x 2x 3x....
+- LATIHAN penerapan while
+
+2. TABEL PENELUSURAN
+
+3. FOR PADA JAVASCRIPT
+
+- contoh dengan 1x.2x.3x...
+- LATIHAN gabungan while & for
+
+4. IF ELSE PADA JAVASCRIPT
+
+- mengecek bilangan ganjil / genap
+- contoh mencari nilai ganjil: angka % 2 === 1
+  > contoh bagus dibawahnya
+- LATIHAN for dengan if else
+
+5. Pengkondisian ELSE IF PADA JAVASCRIPT
+
+- LATIHAN else if
+
+6. LATIHAN PENGKONDISIAN PADA JAVASCRIPT
+
+- kasus jika ingin ada 2 yg sedang lembur:
+- kasus 3 lembur dan cukup sulit
+
+7. SWITCH PADA JAVASCRIPT
+
+- dasar nya dulu
+- penggunaan dasar switch
+- contoh pilih makanan dengan switch
+- contoh pilih makanan dengan switch DIPERSINGKAT
+
+8. pengulangan dan pengkondisian bersarang PADA JAVASCRIPT
+
+9. MEMBUAT GAME SUIT JAWA
+
+- ada pr membuat tebakan 1-10
+
+################### POINT 7 ################### 0. FUNCTION pada JAVASCRIPT : Intro
+
+1. Membuat dan menjalankan function
+
+2. Parameter dan Argument
+
+- pengertian dan dasar
+
+3. REFACTORING
+
+4. VARIABLE SCOPE
+
+- global /window scope
+
+5. Rekursif / recursion
+
+6. Declaration vs Expression
+
+- pengertian Expression
+
+################### POINT 8 ################### 0. ARRAY pada JAVASCRIPT : Intro
+
+- array itu kayak list di python coy
+
+1. Manipulasi array
+
+- hapus array (undefined)
+- menambahkan array (.push() dan .pop())
+- unshift dan shift
+
+2. Slice dan Splice
+
+- ada rumusnya kalo mau pake
+
+3. FOREACH & MAP
+
+- seperti pengulangan
+- penggunaan short
+
+4. FILTER & FIND
+
+- liat aja sendiri
+
+5. MEMBUAT PROGRAM PENGELOLAAN PENUMPANG ANGKOT
+
+6. MEMBUAT PROGRAM PENGELOLAAN PENUMPANG ANGKOT (part 2)
+
+################### POINT 9 ################### 0. OBJECT pada JAVASCRIPT : Intro
+
+1. Membuat Object
+
+- membuat manual
+- function declaration
+- constructor
+
+2. THIS
+
+- membuat objek dengan normal
+  cara 1 function declaration
+  cara 2 object literal
+  cara 3 constructor
+- membuat objek dengan this
+  cara 1 function declaration
+  cara 2 object literal
+  cara 3 constructor
+
+3. Latihan Object
+- program angkot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------ DOCUMENT OBJECT MODEL ------------------------------------
+javascript dan DOM
+
+1. pendahuluan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
