@@ -1,0 +1,385 @@
+DAFTAR ISI
+
+1.MATERI NILAI & TIPE DATA
+- tipe data
+
+2. OPERATOR
+- operator aritmatika
+- operator penugasan / assignment
+- operator perbandingan / comparasion
+- operator logika / Logical
+- operator string
+- operator typeof
+- operator kondisional
+
+3. STRING
+- contoh penggunaan \'
+- penutup kutip
+
+4. BOOLEAN
+- menentukan true or false
+
+
+
+
+
+
+
+########################### MATERI NILAI & TIPE DATA ##################
+
+
+----------------  TIPE DATA ----------
+
+di dalam js ada 6 tipe data yg bisa digunakan
+number
+string
+boolean
+object
+function
+undefined
+
+
+number
+-angka tanpa desimal
+    10, 1500,123456
+    akurat sampai 15digit
+
+
+-angka dengan desimal
+    3.14, 0.5, 100.00  (koma di js digantikan dengan titik).
+    maksimal 17 digit di belakang koma.
+
+
+-Eksponen
+    123e5 // 12300000
+    123e-5 // 0.00123
+
+-Bilangan Negatif
+    -
+
+-Angka Special
+    infinity (I)
+    -infinity           contoh 2/0 =infinity
+    NaN (Not a Number)  contoh 0/0 | 5/"rafa"=NaN
+                        100/"10" = 10
+
+angka diawal dengan 0 akan dianggap bilangan oktal (022).
+dan juga 0x akan dianggap bilangan hexadesimal 
+0xff js akan kembalikan nilai dengan 255
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#################################  OPERATOR  #################################
+
+aritmatika      >
+penugasan       >
+perbandingan    >   Binary
+logika          >
+string          >
+kondisional     >Ternary
+typeof          >Unary
+
+
+operator Binary membutuhkan 2 operand 
+contohnya:  operand1 operator operand2  1+1
+
+operator Ternary membutuhkan 3 operand 
+contohnya:  -
+
+operator Unary membutuhkan 1 operand 
+contohnya: operand operator (bisa dibalik)
+
+(Operand merupakan nilai yang akan digunakan untuk di dalam proses operasi, sedangkan operator merupakan simbol yang digunakan untuk mendapatkan hasil dari proses tersebut.)
+
+
+
+
+
+---------------------------  operator aritmatika ----------
++ - * /, % sebutannya modulo/modulus/sisa bagi 
+contoh 100%50 =0
+
+operator precedence
+urutan operasi matematika () * / + -
+
+
+
+
+
+---------------------------  operator penugasan / assignment  ----------
+yg sering digunakan yaitu tanda =
+biasa bekerja dengan variabel
+contoh:
+x = 10 (panggil x lalu enter,10 ny keluar)
+
+ada banyak operator penugasan = += -= *= /= %=
+contoh:
+x = 10
+x +=30      (maka akan dijumlah kan menjadi 40)
+
+
+
+
+
+---------------------------  operator perbandingan / comparasion  ----------
+! SUSAH UY
+
+untuk membandingkan dua buah operand
+full nya ada di FOLDER IMG. FILE perbandingan
+
+akan menghasilkan sebuah nilai boolean true atau false
+contoh:
+10 == 10    true
+5 != 5      false   (5 apakah ga sama dengan 5 jwbnya salah)
+5 !=9       true    (5 apakah ga sama dengan 9 jwbnya betul)
+
+
+
+
+
+---------------------------  operator logika / Logical ----------
+digunakan untuk menentukan logika dari beberapa ekspresi yg nnti kita gabungkan 
+simbol 
+&&      and
+||      or
+!       not
+
+        example && (and)
+x=12
+
+(x % 2 == 0)    "apakah 12 bilangan genap true"
+true
+
+(x % 2 == 0) && (x < 8)    "untuk cek bilangan genap && x lebih kecil dari 10 false"
+false                       "&& 2-2 nya harus true,kalo salahsatu false hasil ny false"
+
+
+        example || (or)
+
+x=10                    
+
+(x%2 ==0) && (x <12)
+true
+
+(x%2 ==0) || (x <8)     "|| asal salah satunya benar nilai nya akan true"
+true 
+
+
+        example ! (not)
+
+x=10
+
+(x < 20)    true 
+
+!(x<20)     "! untuk membalikkan hasil boolean nya. contoh jika hasil nya true di balikin jadi false"
+false
+
+
+
+
+---------------------------  operator string ----------
+dibuat menggunakan tanda "+". 
+
+bisa sebagai operator matematik atau
+sebagai operator penggabung 2 atau lebih string
+
+di js tanda + memiliki 2 fungsi.
+jika operand nya adalah angka maka akan jadi aritmatika.
+jika operand adalah string atau tulisan maka akan berubah jadi operator penggabung string.
+
+var a       a = "apple"
+var b       b = "pen"
+
+a+b
+"applepen"
+
+a+" " + b
+"apple pen" 
+
+
+jika kita menjumlah string dengan angka atau sebaliknya
+10 + "10"       "1010"
+
+10+10+"10"      "2010"
+
+"10" +10 + 10   "101010"        
+
+jika angka dgn angka hasilnya akan angka, tapi jika salah satunya string maka tanda + ini berubah  menjadi operator string
+
+
+
+
+
+---------------------------  operator typeof ----------
+digunakan untuk mengetahui tipe data apa dari nilai yg kita masukan nnti kedalamnya.
+cara cukup tulis.   typeof(operand)
+
+ketik di console:
+typeof("10")        "string"
+typeof(true)        "boolean"
+typeof(10)          "number" 
+
+ini akan bermanfaat pada saat nya
+
+
+
+
+---------------------------  operator kondisional ----------
+
+digunakan untuk melakukan pengecekan pada sebuah kondisi dan menentukan nilai yg dihasilkan ketika kondisinya bernilai true atau false,
+berikut cara nulis nya:
+
+(kondisi) ? benar:salah
+
+x=10
+(x % 2 == 0) ? "genap":"ganjil"
+"genap"
+
+ganjil genap itu bisa diganti menjadi apapun.
+bisa angka, boolean, bahkan bisa memanggil function 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#################################  STRING  #################################
+
+'"Gerakan pengut sampah" dilaksanakan hari jum'at'
+akan error karna petik " dan ' nya berlebihan
+
+yg dibutuhkan adalah sesuatu yg namanya escape karakter
+berfungsi menampilkan sebuah karakter yg di interpresentasikan berbeda dalam sebuah bahasa pemrograman
+kutip tdi sebagai pembuka dan penutup.
+agar terhidar seperti di contoh maka gunakan
+\"
+\'
+itu disebut escape karakter 
+contoh:
+
+'"gerakan pungut sampah" dilakukan di hari jum\'at'
+`"gerakan pungut sampah" dilakukan di hari jum'at`
+
+"\"gerakan pungut sampah\" dilaksanakan hari jum'at"
+`"gerakan pungut sampah" dilaksanakan hari jum'at` 
+
+"jadwalnya hari \n jum\'at'"    pakai \n maka will line baru
+"jadwalnya hari                 \n 2x will make 2 line baru
+ jum'at'"                       \t  will membuat spasi sperti tab
+
+
+(  dan open img unicode  )
+
+didalam string ada konkatenasi (concatenation) dengan karakter + .
+tanda "+"
+bisa sebagai operator matematik atau
+sebagai operator penggabung 2 atau lebih string.
+
+bisa membandingkan 2 buah string dengan make operator == atau ===
+akan mengecek 2buah string itu sama atau tidak. 
+alert! huruf besar kecil itu beda.
+
+ada sebuah fungsi yg dapat digunakan .length
+digunakan untuk menghitung panjang dari sebuah string
+contoh:
+"rafa haris" .length
+10 
+
+var nama = "Rafa Haris"
+nama .length
+10 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#################################  BOOLEAN  #################################
+
+merupakan jenis tipe data.
+sebuah tipe data yg digunakan untuk merepresentasikan logika true or false.
+
+boolean ini biasanya digunakan pada statement pengkondisian, untuk menentukan aksi yg berbeda dan mengatur alur kendali dari program.
+
+nila boolean yaitu true | false
+banyak contoh nya sudah broo
+
+contoh:
+"RafaHaris" == "rafaharis"      == (sama dengan)
+false 
+
+bisa juga pakai fungsi dari JS   Boolean(nilai)     noted: B ny besar
+contoh:
+Boolean(10<20)
+true 
+
+beberapa istilah truthy dan falsy ada di img nilai.png
+
+semua nilai yg ada di dalam JS menyimpan nilai boolean di dalamnya.

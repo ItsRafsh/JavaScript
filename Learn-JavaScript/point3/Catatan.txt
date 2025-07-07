@@ -1,0 +1,74 @@
+/* ###########################  VARIABEL  #####################
+
+apa itu variabel :
+variabel adalah sebuah tempat/wadah yg memiliki nama, 
+yg digunakan untuk menyimpan sebuah nilai.
+pahami dulu dibawah ini 
+
+DEKLARASI :sebuah tahap untuk mendaftarkan variabel ke dalam lingkup yg sesuai. 
+            yg penting daftarkan dulu
+
+INISIALISASI :proses untuk pemesanan atau menyediakan memori yg nanti digunakan untuk variabel
+
+ASSIGNMENT :unntuk menetapkan nilai yg spesifik ke dalam variabel
+
+contoh:
+var x;  
+artinya mendeklarasikan & inisialisasi variabel yg namanya x, 
+variabel tersebut akan didaftarkan di dalam lingkup yg sesuai lalu akan di pesan 1 blok 
+memori untuk nantinya kita simpan nilai di dalamnya
+
+x = 20;  artinya assignment/kita menugaskan angka 20 untuk disimpan ke dalam variabel x. 
+
+
+
+
+
+
+
+selain var ada keyword yg lain seperti
+var
+let
+const
+
+-----------------  var  -----------------
+aturan pertama, yaitu tidak boleh pakai spasi.
+contoh yg dibolehkan:
+
+var boleh1;
+var ini_juga_boleh;
+var boleh$;
+var $_$;
+var iniBolehBanget;     >ini paling sering di gunakan programmer JS. kecil di depan, selanjutnya kapital
+
+
+
+
+
+-----------------  ShortHand  -----------------
+kita bisa menyingkat nya dalam membuat variabel.
+contoh:
+
+INI YANG VERSI PANJANG
+var nama;
+var umur;
+var lulus;
+
+nama = "Rafa Haris"
+umur = 18;
+lulus = true;
+
+
+INI YANG VERSI PENDEK
+var nama = "Rafa Haris",
+    umur = 18,
+    lulus = true;
+
+
+
+
+-----------------  Variabel Scope/Lingkup Variabel  -----------------
+penting dipahami supaya nanti kita bisa menggunakan variabel secara tepat.
+tapi untuk memahami ini, kita butuh pemahaman mengenai function dan object
+
+*/

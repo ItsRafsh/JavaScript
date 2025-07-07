@@ -1,0 +1,866 @@
+
+6. ----------------------- CONTROL FLOW -----------------------
+control flow atau alur kendali
+
+Normal Flow/alur normal: apabila program kita memiliki lebih dari 1 statement,maka
+statement tersebut akan di eksekusi dari atas ke bawah,
+atau dari kiri ke kanan
+contohnya:
+
+alert('halo');      ini akan menampilkan dialog halo nama saya rafa
+alert('nama');      alert tidak akan tertukar
+alert('saya');
+alert('rafa');
+
+contoh lagi:
+var angka = prompt('masukan angka : ');
+alert('angka yg anda masukan adalah : ' + angka);
+
+
+kalo ingin tidak ter urut dari atas ke bawah bisa pake while/pengulangan 
+dan pengkondisian,hal ini yg dapat mengatur program kita
+
+
+
+- Pengulangan
+pengulangan atau loop/iteration adalah sebuah konsep untuk mengerjakan atau mengeksekusi
+sebuah statement yg sama lebih dari 1kali atau berulang.
+
+sintax pengulangan js ada banyak
+for
+while
+do while
+
+contohnya:
+menggunakan keyword for 
+
+alert('mulai');
+for(var i = 0; i < 5; i++) {
+    alert('hello world');
+}
+alert('selesai');
+
+
+
+- Pengkondisian
+atau ada sebut percabangan sama aja
+percabangan ini adalah sebuah keadaan dimana program kita bisa memilih untuk mengeksekusi
+statement yg berbeda berdasarkan kondisi yg diberikan.
+
+ada beberapa sintax yg dipahami
+if
+if.. else
+if.. else if.. else
+switch
+
+contohnya:
+var angka = prompt('masukan angka: ');
+if(angka % 2 === 0 ) {                      >jika angka yg yg dimasukan tadi dibagi 2 sisa baginya adalah 0
+    alert(angka + 'adalah bilangan genap'); >maka dia bilangan genap
+} else {
+    alert(angka + 'adalah bilangan ganjil');    >tinggal dibalik aja
+}
+
+SEDERHANANYA SEPERTI INI
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.1 ----------------------- Pengulangan: WHILE pada JS -----------------------
+membuat sebuah hal yg sama berulang kali
+
+contoh penggunaan while:
+while(kondisi) {            >selama kondisi yg di dalam kurung itu true maka,
+    aksi                    >lakukan aksi yg ada di dalam kurung kurawal
+}                           >klo false aksi ga dilakukan 
+
+--- menghentikan aksi dilakukan oleh user:
+var ulang = true;
+while(ulang) {
+    console.log('hello world');
+    ulang = confirm('mau lagi ga');
+}
+
+---  menghentikan aksi dilakukan oleh program:
+increment / decrement
+
+var nilaiawal = 1;
+while(nilaiawal <= 5) {         >ini disebut kondisi terminasi
+    console.log('hello wold');
+    nilaiawal++;                >nilai awal ditambah 1 tiap pengulangannya
+}
+
+
+---  membuat text halo 1x 2x 3x....
+var nilaiawal = 1;
+while(nilaiawal <= 10) {
+    console.log('hallo masseh ' + nilaiawal + 'x');     >kanyak gini lah
+    nilaiawal++;                
+}
+
+---  latihan penerapan while
+var angkot = 1;
+while(angkot <= 10) {
+    console.log('Angkot No. ' + angkot + ' beroperasi dengan baik');
+    angkot++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.2 ----------------------- TABEL PENELUSURAN -----------------------
+biasa disebut trace tabel / dry-run test
+
+var jmlangkot = 10;
+var angkot = 1;
+while(angkot <= jmlangkot) {
+    console.log('Angkot No. ' + angkot + ' beroperasi dengan baik');
+    angkot++;
+}
+
+HANYA MENJELASKAN BAHWA PENGULANGANNYA SAMPAI 11 KALI 
+
+LIHAT CONTOH DI FOLDER img SAJA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.3 ----------------------- FOR pada JS -----------------------
+selalu butuh:  nilaiawal > kondisi > increment/decrement
+
+contoh polosannya
+
+for(... ; ... ;){
+}
+# pengulangan hitung mundur
+for(var i = 10; i >= 1;i--){
+    console.log(i)
+}
+
+penjelasannya:
+for(var nilaiawal = 1; nilaiawal <= 10;) {
+    console.log('hollloooo');
+}
+
+--- contoh dengan 1x.2x.3x...
+for(var nilai = 1; nilai <= 10; nilai++ ) {
+    console.log('hallo coy ' + nilai + 'x');
+}
+
+--- gabungan while & for
+var jmlangkot = 10;
+var angkotbagus = 6;                        >bisa diubah2
+var angkot = 1;
+
+while(angkot <= angkotbagus) {              >1 lebih kecil dari 6,maka hasilkan
+    console.log('Angkot No. ' + angkot + ' Beroperasi dengan baik');        >ini 
+    angkot++;                               >setelah selesai tambah lagi 1
+}
+for(angkot = angkotbagus + 1; angkot <= jmlangkot; angkot++ ) {         >var angkot baru+1; lebih kecil
+    console.log('Angkot No. ' + angkot + ' tidak beroperasi');          >hasil kan ini 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.4 ----------------------- IF ELSE pada JS -----------------------
+termasuk materi pengkondisian/percabangan
+berikut sintax dasar nya
+if(kondisi) {
+    aksi            >melakukan aksi jika kondisi bernilai true
+}
+....                >kluar dari blok jika bernilai false
+
+contoh:
+var angka = 1;                          >jika diganti 2 ga muncul pop up
+if(angka === 1) {
+    alert('anda memasukan 1');          >akan menampilkan pop up
+}                                       >karna menghasilkan false akan keluar dari blok ny 
+
+var angka = 2;
+if(angka < 5) {                                 >jika hanya 5<5 hasilnya false karna gada =
+    alert(angka + 'angka lebih kecil dari 5');
+}
+
+
+--- mengecek bilangan ganjil / genap
+var angka = 9;
+if(angka % 2 == 0) {
+    alert(angka + 'angka nya bilngn genap');
+}
+if(angka % 2 == 1) {                            > contoh mencari nilai ganjil 
+    alert(angka + 'tapilkn ganjil');
+}
+
+
+( KARNA KURANG BAGUS. BERIKUT CONTOH DI BAWAHNYA YG BAGUS NYA: )
+var angka = 9;                                  >ini cara sebutnya:
+if(angka % 2 == 0) {                            >apakah 9:2 hasilnya 0 false 
+    alert(angka + 'angka nya bilngn genap');
+}else {
+    alert(angka + 'hasilnya ganjill yaa');      >hasilnya ganjil
+}
+var angka = prompt('masukkan angka nya');       >gunakan ini agar user yg kasi angka 
+
+
+
+--- latihan for dengan if else
+var jmlangkot = 10;
+var angkotberoperasi =6;
+var noAngkot = 1;
+
+for(noAngkot; noAngkot <= jmlangkot; noAngkot++) {
+
+    if(noAngkot <= 6) {
+        console.log('Angkot No.' + noAngkot + ' dapat beroperasi dgn baik');
+    } else {
+        console.log('Angkot No.' + noAngkot + ' ga bisa operasi');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.5 ----------------------- ELSE IF pada JS -----------------------
+kalo if else. misal user masukin angka genap / ganjil nilai nya akan keluar,
+tapi kalo user masukin huruf, pasti nilai yg kelur ganjil karna else itu false.
+
+else if ini digunakan ketika kita punya kondisi lain selain if dan else tadi
+contoh rumus
+
+if else biasa:                      else if:
+if (kondisi 1) {                    if (kondisi 1) {
+    aksi 1                              aksi 1
+}else {                             } else if(kondisi 2) {
+    aksi 2                              aksi 2
+}                                   } else {
+`                                       aksi 3
+`                                   }
+
+contoh nyaa:
+var angka = prompt('masukan angkanyaaa:')
+
+if(angka % 2 == 0) {
+    alert(angka + 'itu genap brooo');
+}
+else if(angka % 2 === 1) {
+    alert(angka + 'yaa ituu ganjill cuyy');
+}
+else{
+    alert('Ngetik itu angka woy bukan huruf');
+}
+
+--- LATIHAN else if
+
+var jmlangkot = 10;
+var angkotberoperasi =6;
+var noAngkot = 1;
+
+for(noAngkot; noAngkot <= jmlangkot; noAngkot++){
+    if(noAngkot <= angkotberoperasi) {
+        console.log('Angkot No.' + noAngkot + ' Sedang bekerja dengan baik ges');
+    }
+    else if(noAngkot === 8) {
+        console.log('Angkot No' + noAngkot + ' sedang lembur beliauuuu');
+    }
+    else {
+        console.log('Angkot No.' + noAngkot + 'Sedang bengkel');
+    }
+
+}               NONTON 6.6 untuk penjelasannya
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.6 ----------------------- LATIHAN PENGKONDISIAN pada JS -----------------------
+
+---  kasus jika ingin ada 2 yg sedang lembur:
+
+var jmlangkot = 10;
+var angkotberoperasi =6;
+var noAngkot = 1;
+
+for(noAngkot; noAngkot <= jmlangkot; noAngkot++){
+    if(noAngkot <= angkotberoperasi) {
+        console.log('Angkot No.' + noAngkot + ' Sedang bekerja dengan baik ges');
+    }
+    else if(noAngkot === 8 || noAngkot === 10) {                                    > pake logika atau ||,
+        console.log('Angkot No' + noAngkot + ' sedang lembur beliauuuu');
+    }
+    else {
+        console.log('Angkot No.' + noAngkot + 'Sedang bengkel');
+    }
+
+}
+
+---  kasus jika ingin ada 3 yg sedang lembur,tapi bukan angkot yg dibengkel:
+
+var jmlangkot = 10;
+var angkotberoperasi =6;
+var noAngkot = 1;
+
+for(noAngkot; noAngkot <= jmlangkot; noAngkot++){
+    if(noAngkot <= 6 && noAngkot !== 5) {
+        console.log('Angkot No.' + noAngkot + ' Sedang bekerja dengan baik ges');
+    }
+    else if(noAngkot === 8 || noAngkot === 10 || noAngkot === 5) {
+        console.log('Angkot No' + noAngkot + ' sedang lembur beliauuuu');
+    }
+    else {
+        console.log('Angkot No.' + noAngkot + 'Sedang bengkel');
+    }
+}
+
+penjelasannya:
+di if atas ditambah logical && dan !==
+!== artinya tidak sama dengan. dan gini cara bacanya
+kalo angkotnya lebih kecil dari 6 dan dia no angkot nya tidak sama dengan 5.    lanjut dibawahnya
+
+kalo angkotnya lebih kecil dari 6 dan dia bukan 5 maka tampilkan  (beroperasi dengan baik)
+jadi, pas no angkotnya 5.
+apakah 5 lebih kecil dari 10 "true". apakah 5 lebih kecil dari 6 "true" dan apakah 5 tidak
+samadengan 5 "false".
+pake operator && 2-2 nya harus true. karna false aksi nya ga dikerjakan 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.7 ----------------------- SWITCH pada JS -----------------------
+pake nya mirip if dan else 
+berikut contoh rumus nya:
+
+switch(ekspresi) {
+    case "nilai 1":     
+        aksi 1
+    [break;]                >agar setelah aksi1 dijalankan,maka keluar dari switch atau ke aksi2
+    case "nilai 2":
+        aksi 2
+    [break;]
+    case "nilai n":
+        aksi n
+    [break]
+    default:
+        aksi default        >kalo ga terpenuhi dari smua aksi diatas. default itu bagaikan else
+    [break;]
+}
+
+
+--- dasar nya dulu:
+var angka = prompt('masukin angka mu:');    >saat aku input itu pasti menjadi string,sedangkan kita membandingkannya dengan intejer
+
+if(angka == 1) {                    >solusi saat input bisa,dgn pake == aja atau angka '1' '2' dijadikan string
+    alert('anda masukin 1');        >solusi ke2 ada di pembahasan.
+}
+else if(angka == 2) {               >2samadengan artinya operator perbandingan. kalo 3 itu operator identitas
+    alert('anda masukin 2');        
+}
+else if (angka ==3) {
+    alert('anda masukin 3')
+}
+else {
+    alert('anda masukin salah');
+}
+
+pembahasan
+var angka = prompt('masukin angka mu:');    
+solusi dengan cara memaksa apa yg diinputkan user menjadi angka atau intejer dgn tambahin parseInt();
+var angka = parseInt(prompt('masukin angka mu:'));
+itulah hasilnya
+
+
+
+
+
+---  penggunaan dasar switch
+
+var angka = prompt('masukin angka mu:');    >karna prompt itu string,makanya case '1' dikasi string juga
+
+switch( angka ){
+    case '1':                               >dikasi string, dan seterusnya
+        alert('kau masukin angka 1');
+        break;
+    case '2':
+        alert('kau masukin 2');
+        break;
+    case '3':
+        alert('kau masukin 3');
+        break;
+    default:
+        alert('kau masukin yg salah');
+        break;  
+}
+
+
+
+---  contoh pilih makanan dengan switch
+var item = prompt('masukan nama makanan / minuman: \n (cth: nasi daging susu burger, soda)');
+
+switch(item) {                              >kita akan memilih
+    case 'nasi':                            >case mana yg dikerjakan sesuai dgn isi variabel item 'nasi'
+        alert('makanan/minuman sehat');
+        break;
+    case 'daging' :
+        alert('makanan/minuman sehat');
+        break;
+    case 'susu' :
+        alert('makanan/minuman sehat');
+        break;
+    case 'burger' :
+        alert('makanan/minuman ga sehat');
+        break;
+    case 'soda' :
+        alert('makanan/minuman gas sehat');
+        break;
+    case 'masukan' :
+        alert('lu nulis apa cok');          >switch ini kek masukin smua value yg di prompt
+        break;
+    default :
+        alert('salah masukin makanan/minuman kamu');
+        break;
+}
+
+
+
+---  contoh pilih makanan dengan switch DIPERSINGKAT
+var item = prompt('masukan nama makanan / minuman: \n (cth: nasi daging susu burger, soda)');
+
+switch(item) {
+    case 'nasi':
+    case 'daging' :                         >ini alert akan turun kebawahnya
+    case 'susu' :
+        alert('makanan/minuman sehat');
+        break;                              >tanpa break case yg diatas akan mengambil alert dibawahnya,lebih simple kan
+
+    case 'burger' :
+    case 'soda' :
+        alert('makanan/minuman gas sehat');
+        break;
+    default :
+        alert('salah masukin makanan/minuman kamu');
+        break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.8 ----------------------- pengulangan dan pengkondisian bersarang -----------------------
+SANGAT SUSAH MASI BINGUN TONTAN AJA LAGI YT NYA.
+INI HANYA SEBERAPA CONTOH LATIHAN,ADA LAGI YG LEBIH GILAA
+BISMILLAH AKU YAKIN BISA PROGRAMMING.....AAMIIIN
+
+
+--- bintang ke sebelah kanan:
+var s = '';
+for(var i = 0; i < 5; i++) {    >kalo mau star ny 10, ganti aja 5 nya jadi 10
+    s += '*';                   >sama aja seperti   s = s + '*';
+    s += '\n'          opsional >tambah ini kalo mau bintang turun ke bawah.
+}
+console.log(s);
+
+--- 5 bintang dan turun ke bawah:
+var s = '';                         >ingin ada 7 baris dan 10 bintang
+for(var i = 0; i < 10; i++) {       >10 nya ganti 7 karna tugas nya membuat baris
+    for(var j = 0; j < 5; j++) {    >5 nya diganti 10 karna tugasnya menambah bintang 
+        s += '*';
+    }
+    s += '\n';
+}
+console.log(s);
+
+---  buat bintang berurutan ke bawah:
+var s = '';
+for(var i = 0; i < 70; i++) {
+    for(var j = 0; j <= i; j++) {       >tingaal ganti no 5 menjadi j, jangan lupa <= ditambah samadengan
+        s += '*';
+    }
+    s += '\n';
+}
+console.log(s);
+
+
+---  bintang yg banyak ada di atas turun ke bawah:
+var s = '';
+for(var i = 10; i > 0; i--) {       >0 jadi 10. < jadi >. 70 jadi 0. ++ jadi --
+    for(var j = 0; j < i; j++) {    >samadengan <= dihilangkan
+        s += '*';
+    }
+    s += '\n';
+}
+console.log(s);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.9 ----------------------- MEMBUAT GAME SUIT JAWA -----------------------
+SANGAT SULIT,TAPI AKU PASTI BISA MEMPELAJARINYA DAN MENGUASAINYA
+
+var tanya = true;
+while ( tanya ) { 
+#  menangkap pilihan player
+var p = prompt('pilih : gajah, semut, orang');
+
+#  menangkap pilihan komputer
+#  membangkitkan bilangan random
+var comp = Math.random();                       >panggil library js Math.lalu panggil method/fungsinya random = bangkitkan bilangan random 0 sampai 1 (menit 6:20)
+
+if( comp < 0.34 ) {
+    comp = 'gajah';
+}else if ( comp >= 0.34 && comp < 0.67 ) {
+    comp = 'orang';
+}else {
+    comp = 'semut';
+}
+
+
+
+var hasil = '';
+#  menentukan rules
+if( p == comp  ) {
+    hasil = 'SERI!';
+}else if ( p == 'gajah' ) {
+    #  if( comp == 'orang' ) {
+    #      hasil = 'MENANG!';
+    #  }else {
+    #      hasil = 'KALAH!';
+    #  }
+    hasil = ( comp == 'orang' ) ? 'MENANG!' : 'KALAH!';
+}else if ( p == 'orang' ) {
+    #  if( comp == 'gajah' ) {
+    #     hasil = 'KALAH!';        > ANGGAP INI
+    #  }else {                      > DIHAPUS
+    #      hasil = 'MENANG!';       > JANGAN DIPEDULIKAN
+    #  }
+    hasil = ( comp == 'gajah' ) ? 'KALAH!' : 'MENANG!';
+}else if ( p == 'semut' ) {
+    hasil = ( comp == 'orang' ) ? 'KALAH!' : 'MENANG!'; 
+}else {
+    hasil = 'Memasukan pilihan yang salah !';
+}
+// tanpilkan hasilnya
+alert('Kamu memilih : ' + p + ' dan komputer memilih : ' + comp + '\nMaka hasilnya : Kamu ' + hasil);
+
+tanya = confirm('lagi kah?');
+}
+alert('Terima kasih yoo sudah bermain.');
+
+
+
+
+
+---------------  VERSI SINGKAT DAN ASLI  --------------
+
+var tanya = true;
+while ( tanya ) { 
+#  menangkap pilihan player
+var p = prompt('pilih : gajah, semut, orang');
+
+#  menangkap pilihan komputer
+#  membangkitkan bilangan random
+var comp = Math.random();
+
+if( comp < 0.34 ) {
+    comp = 'gajah';
+}
+else if ( comp >= 0.34 && comp < 0.67 ) {
+    comp = 'orang';
+}
+else {
+    comp = 'semut';
+}
+
+var hasil = '';
+#  menentukan rules
+if( p == comp  ) {
+    hasil = 'SERI!';
+}
+else if ( p == 'gajah' ) {
+    hasil = ( comp == 'orang' ) ? 'MENANG!' : 'KALAH!';
+}
+else if ( p == 'orang' ) {
+    hasil = ( comp == 'gajah' ) ? 'KALAH!' : 'MENANG!';
+}
+else if ( p == 'semut' ) {
+    hasil = ( comp == 'orang' ) ? 'KALAH!' : 'MENANG!'; 
+}
+else {
+    hasil = 'Memasukan pilihan yang salah !';
+}
+#  tanpilkan hasilnya
+alert('Kamu memilih : ' + p + ' dan komputer memilih : ' + comp + '\nMaka hasilnya : Kamu ' + hasil);
+tanya = confirm('lagi kah?');
+}
+alert('Terima kasih yoo sudah bermain.');
+
+
+
+
+# INI CONTOH PR YG DIBERIKAN ---- menebak angka 1-10 ----
+let ulang = true;
+while (ulang){
+	let comp = Math.floor(Math.random() * 10 + 1);
+	for (i = 3; i>=1; i--){
+		
+		let player  = prompt("Tebak angka dari 1 sampai 10 \nKamu punya " +i+  " kali kesempatan menebak"),
+		hasil = "";
+		if (i == 1){
+			hasil = "\nKesempatan habis, GAME OVER";
+		}
+		if (player == "" || player > 10 || player == null){
+			alert("Anda belum memasukkan nilai atau  Anda masukkan nilai lebih dari 10. \nGAME OVER");
+			break;
+		} else if (player == comp){
+			alert("SELAMAT !!! Angka yang anda tebak benar" );
+			break;
+		} else if (player > comp){
+			alert("Angka yang anda tebak terlalu besar" + hasil);
+		} else if(player < comp) {
+			alert("Angka yang anda tebak terlalu kecil" + hasil);
+		} else {
+			alert("Yang anda masukkan bukan angka, GAME OVER");
+			break;
+		}
+	}
+	ulang = confirm("Mau main lagi?");
+}
+alert("Terimakasih sudah bermain game tebak angka");

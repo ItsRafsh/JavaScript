@@ -1,0 +1,59 @@
+#########################  MENULIS JAVASCRIPT #########################
+
+bisa internal & external
+
+<script>
+    var x = 10;
+</script>
+
+
+
+
+
+
+
+
+---------------- internal  ----------------
+bisa di setelah title atau di dalam body
+
+kalo mau buat tulisan di console
+contohnya:
+console.log();  gunanya untuk menuliskan sesuatu ke dalam konsol di browser kita.
+
+console itu penting ketika kita membuat kesalahan, 
+misal kalo aku lupa titik, di console akan error.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENULIS JAVASCRIPT</title>
+</head>
+<body>
+    <h1>hello World</h1>
+
+    <script>
+        var x = 10;
+        console.log("hello world!");
+        console.log('isi dari variabel x adalah ' + x);
+    </script>
+</body>
+</html>
+
+
+
+
+
+---------------- external  ----------------
+
+<script src="menulis_js.js"></script>
+</body>
+
+
+
+
+
+
+

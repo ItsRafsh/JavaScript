@@ -1,0 +1,109 @@
+#########################  POP UP BOX  #########################
+
+bisa disebut juga dialog box: adalah sebuah window kecil pada browser kita yg dapat
+kita munculkan, sebagai alat interkasi yg digunakan agar user dapat berdialog dengan 
+halaman web.
+
+ada 3 pop up box yg dapat kita gunakan
+alert
+prompt
+confirm
+
+
+
+
+-------------------  alert/alert box  -------------------
+di js ditulis seperti ini:
+alert('Hello World!');
+
+cara membuat banyak alert di web kita
+alert('Halo');
+alert('Nama Saya');
+alert('Rafa');
+alert('Haris');
+alert(':') hehe;
+
+
+
+
+
+
+
+
+
+
+-------------------  prompt  -------------------
+
+tidak hanya ada tombol ok aja. ini akan menampilkan textbox
+
+contohnya:
+prompt('Masukin namamu');
+
+
+agar nilai atau text yg kita ketik bisa dilihat kita perlu simpan di variabel
+agar bisa ditampung
+contohnya:
+var nama = prompt('Masukin namamu');
+alert(nama);                            > akan menampilkan apa yg ku tulis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------  confirm  -------------------
+pop up nya sama kyk alert tapi ada tombol cancel nya.
+kita bisa tentukan apa yg terjadi jika user tekan tombol ok / cancel.
+contoh nya kyk mau delete file,kita perlu confirm apakah yakin ingin di delete
+!! alert akan di pelajari di pengkondisian atau pengulangan !!
+
+contohnya:
+var tes = confirm('kamu yakiinn??');
+alert(tes);
+
+
+
+
+
+ini biasa digunakan jika butuh konfirmasi dari user.
+contoh lagi:
+var tes = confirm('Kamu Yakinnn??');
+
+if( tes === true) {                     >kalo tes nya bernilai true
+    alert('user menekan YESSS');        >ini klo menekan tombol OK
+} else {                                >atau selain itu ketika
+    alert('User menekan BATALLL');      >user menekan tombol CANCEL.
+}
+
+
+menggabungkan 3pop up di 1pengulangan
+contoh pengulangan:
+
+alert('selamat datang');
+var lagi = true;                        >variabel lagi untuk mengecek apakah user ingin berulang or no
+
+while( lagi ) {                         >selama lagi nilai nya true maka pengulangan akan run trus
+    var nama = prompt('masukinn nama muuu:');
+    alert('halo ' + nama);              >klo sdh selesai
+
+    lagi = confirm('coba lagi');        >ingin ditanya lagi
+}
+
+alert('TERIMA KASIHH!!');               >jika tekan cancel
+
+
+
+
+
+
+
+
