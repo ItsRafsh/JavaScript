@@ -1,0 +1,327 @@
+8. ----------------------- ARRAY pada JAVASCRIPT : Intro -----------------------
+array itu sususan sistematis dari objek2 yg serupa.
+merupakan tipe data yg digunakan untuk mendeskripsikan kumpulan elemen (nilai/ variabel) yg tiap2 elemen memiliki index
+
+dari awal sampe akhir
+ini akan menjelaskan beberapa method untuk array ini
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.1 ----------------------- Manipulasi array -----------------------
+sebenarnya array ini kyk list di python
+// nambah array
+var arr = ['a',1,true]
+console.log(arr )
+
+// hapus array
+var arr = ['rafa','haris',19,true]
+arr[1] = undefined;
+console.log(arr)
+
+
+// menampilkan array yg bener
+var arr = ['rafa','haris',19,true];
+for(var i = 0; i < arr.length; i++){
+    console.log('data ke '+i+': '+arr[i]);
+}
+
+
+// method join()
+// join itu merubah ny menjadi string 
+// dalam kurung nya bisa di isi - 1 dll
+var arr = ['rafa','haris',19,'tapis'];
+arr.push('hardi','siswanto')    // menambahkan array, kyk append di python
+arr.pop()                       //sama kyk python hapus array terakhir
+console.log(arr.join(' '));
+
+
+
+// unshift menambahkan (di awal) dan shift menghapus yg (di awal)
+
+arr.unshift('pertama ini','kedua ini?')
+arr.shift()
+console.log(arr.join(' '));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.2 ----------------------- Slice dan Splice -----------------------
+ini sambungan yg diatas 
+
+// splice
+// splice(indexAwal,mauHapusbrp,elemnetbaru1,elemenbaru2,.......)  itu rumusnya
+var arr = ['rafa','haris',19,'tapis'];
+
+arr.splice(3,0,'ini splice')
+arr.splice(1,2,'baru lagi','lagi baru')
+console.log(arr.join(' - '))
+
+// slice
+// slice(indexAwal,indeAkhir)       contoh index 1-3 yg diambil hanya 1 dan 2. 3 nya ga
+var arr = ['rafa','haris','rimuru','tapis','diablo','velzard'];
+
+var sliceapa = arr.slice(1,3);
+console.log(sliceapa.join(' - '));      // maka yg ditampilin hanya (haris dan rimuru)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.3 ----------------------- FOREACH & MAP -----------------------
+seperti pengulangan tapi versi menggunakan method
+// foreach
+var angka = [1,2,3,4,5,6,7,8]
+
+for(var i = 0; i < angka.length; i++){      // ini cara biasa
+    console.log(angka[i])}
+
+angka.forEach(function(e){
+    console.log(e);})    
+
+var nama = ['rafa','haris','rimuru','veldana']      // ini misal manggil orang dengan index
+nama.forEach(function(a,i){
+    console.log('orang ke '+i+' adalah '+a);})
+
+
+
+
+// Map
+var angka = [1,2,3,4,5,6,7,8]
+var angkaBaru = angka.map(function(e){
+        return e * 2;
+});
+console.log(angkaBaru.join(' - '))
+
+
+
+
+// sort
+var angka = [1,2,1,6,33,12,10,19,4,7,8] // mengurutkan tapi ga bagus
+angka.sort();
+console.log(angka.join(' - '))
+
+var angka = [1,2,1,6,33,12,10,19,4,7,8] // nah ini mengurutkan yg sesuai cuy    
+angka.sort(function(a,b){
+    return a-b
+});
+console.log(angka.join(' - '))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.4 ----------------------- FILTER & FIND -----------------------
+// filter
+// bisa mengembalikan banyak nilai
+var angka = [1,2,1,6,33,12,10,19,4,7,8];
+var angkaBaru = angka.filter(function(x){
+    return x >= 4;
+});
+console.log(angkaBaru.join(' - '));
+
+
+
+// find
+// mengembalikan satu nilai
+var angka = [1,2,1,6,33,12,10,19,4,7,8];
+var angkaBaru = angka.find(function(x){
+    return x >= 20;
+});
+console.log(angkaBaru);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8.5 ----------------------- MEMBUAT PROGRAM PENGELOLAAN PENUMPANG ANGKOT  -----------------------
+disiini 8.5 dan 8.6 menjadi satu kesatuan 
+
+- program menambahkan penumpang
+var list_penumpang = [];
+var addPenumpang = function(nama,list_penumpang){
+    // jika angkot kosong
+    if(list_penumpang.length == 0){
+        // tambah penumpang di awal array
+        list_penumpang.push(nama);
+        // kembalikan isi array & keluar dari function
+        return list_penumpang
+    }
+    else{
+        // telusuri seluruh kursi dari awal
+        for(var i = 0; i < list_penumpang.length; i++){
+            // jika ada kursi kosong
+            if(list_penumpang[i] == undefined){
+                // tambah penumpang di kursi tersebut
+                list_penumpang[i] = nama;
+                // kembalikan isi array & keluar dari function
+                return list_penumpang;
+            }
+            // jika sudah ada nama yg sama
+            else if(list_penumpang[i] == nama){
+                // tampilkan pesan kesalahan
+                console.log(nama+' sudah ada di angkot')
+                // kembalikan isi array & keluar dari function
+                return list_penumpang
+            }
+            // jika seluruh kursi terisi
+            else if( i == list_penumpang.length - 1){
+                // tambah penumpang di akhir array
+                list_penumpang.push(nama);
+                // kembalikan isi array & keluar dari function
+                return list_penumpang;
+            }
+        }
+    }
+}
+
+
+
+8.6 ----------------------- MEMBUAT PROGRAM PENGELOLAAN PENUMPANG ANGKOT (part 2) -----------------------
+
+- program menghapus penumpang
+var deletePenumpang = function(nama,list_penumpang){
+    if(list_penumpang.length == 0){
+        console.log('angkotnya masih kosong');
+        return list_penumpang
+    } else{
+        for(var i = 0; i < list_penumpang.length; i++){
+            if(list_penumpang[i] == nama){
+                list_penumpang[i] = undefined;
+                return list_penumpang;
+            } else if( i == list_penumpang.length -1){
+                console.log(nama+' gada di dalam angkot.');
+                return list_penumpang;
+            }
+        }
+    }
+}

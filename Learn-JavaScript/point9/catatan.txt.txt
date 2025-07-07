@@ -1,0 +1,240 @@
+
+
+9. ----------------------- OBJECT pada JAVASCRIPT : Intro ---------c--------------
+sama kanyak dictionary kali di python
+tapi di gabung dengan OOP simpel
+
+var mhs = {
+    nama : 'rafa',
+    umur : 19,
+    ips : [3.00,2.50,10],
+    alamat : {
+        jalan : 'tapis',
+        kota : 'paser',
+        provinsi : 'kaltim'
+    }
+};
+
+pemanggilan juga bisa mhs.ips.[2]
+                      mhs['alamat']['jalan']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9.1 ----------------------- Membuat Object -----------------------
+// membuat objek dengan manual
+var mhs1 = {
+    nama : 'rafa',
+    nrp : 194234,
+    email : 'rafa.@fergfer',
+    jurusan : 'teknik informatika'
+};
+
+var mhs2 = {
+    nama : 'haris',
+    nrp : 765676,
+    email : 'haris.@fergfer',
+    jurusan : 'teknik mesin'
+};
+
+
+
+// function declaration
+// ini untuk mempersimpel pemanggilan / pembuatan objek
+function objekMhs(nama,nrp,email,jurusan){
+    var mhs = {};
+    mhs.nama = nama;
+    mhs.nrp = nrp;
+    mhs.email = email;
+    mhs.jurusan = jurusan;
+    return mhs;
+};
+var mhs3 = objekMhs('rimuru',234423,'rimuru@tempest.com','teknik ultimate')
+var mhs_baru = objekMhs('crimson',23233,'crimson@dse.com','world end')
+
+
+
+
+// constructor
+// ini ga perlu buat var dan return lagi
+function Mahasiswa(nama,nrp,email,jurusan){
+    this.nama = nama;
+    this.nrp = nrp;
+    this.email = email;
+    this.jurusan = jurusan;
+}
+var mhsiswoo = new Mahasiswa('diabloo',32323,'dibao@uui.com','time control')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9.2 ----------------------- THIS -----------------------
+
+// contoh-contoh pembuatan objek normalnya
+// cara 1 function declaration
+function halo(){
+    console.log('halo')}
+halo()
+
+
+// cara 2 object literal
+var obj = {};
+obj.halo = function(){
+    console.log('halo objek literal')}
+obj.halo()
+
+
+// cara 3 constructor
+function Halo() {
+    console.log('halo kontruktor');}
+new Halo();
+
+
+
+
+berikut ini adalah contoh-contoh pembuatan menggunakan this
+
+// this
+console.log(this);
+
+// cara 1 function declaration
+function halo(){
+    console.log(this)
+    console.log('halo')}
+this.halo()     //atau  window.halo()
+// this mengembalikan objek Global  
+
+
+// cara 2 object literal
+var obj = {a : 10,'nama' : 'rimuru'};
+obj.halo = function(){
+    console.log(this);
+    console.log('halo objek literal')}
+obj.halo();
+// this mengembalikan objek yg bersangkutan
+
+
+// cara 3 constructor
+function Halo() {
+    console.log(this)
+    console.log('halo kontruktor');}
+var objek_1 = new Halo();
+var objek_2 = new Halo();
+// this mengembalikan objek yg baru dibuat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+9.3 ----------------------- Latihan Object  -----------------------
+// membuat objek angkot
+function Angkot(sopir,trayek,penumpang,kas){
+    this.sopir = sopir;
+    this.trayek = trayek;
+    this.penumpang = penumpang;
+    this.kas = kas;
+
+    this.penumpangNaik = function(namapnumpang){
+        this.penumpang.push(namapnumpang);
+        return this.penumpang;
+    }
+    this.penumpangTurun = function(namapnumpang,bayar){
+        if(this.penumpang.length === 0){
+            alert('angkot kosong');
+            return false;
+        }
+        for(var i = 0; i < this.penumpang.length; i++){
+            if(this.penumpang[i] == namapnumpang){
+                this.penumpang[i] = undefined;
+                this.kas += bayar;
+                return this.penumpang;
+            }
+        }
+    }
+}
+var angkot1 = new Angkot('rafa',['tapis','jone'],[],0)
+var angkot2 = new Angkot('rimuru',['tempest','blumund'],[],0)
+// cara manggil ini program tulis aja var angkot1 di consol, kanyk manggil method gitu
+

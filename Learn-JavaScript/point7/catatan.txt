@@ -1,0 +1,365 @@
+7 ----------------------- FUNCTION pada JAVASCRIPT : Intro -----------------------
+
+adalah kunci utama pada javascript yg membuat js itu sngat powerfull
+function=    -method -class -constructor -module
+definisi function sub-program/sub-routine yg dpt 'dipanggil' di bagian lain pd program
+        merupakan struktur dasar pembentuk js
+        disebut juga sebagai prosedur (kumpulan statement untuk melakukan tugas/menghitung sbuah nilai)
+        termasuk kedalam first-class object
+
+kenapa function
+-Reusability(DRY    don't repeat yourself)
+-dekomposisi/abstraksi      -modularitas
+
+kategori function
+-built-in function = function yg sdh dibuat js
+
+-user-defined function = buatan sendiri
+    dengan cara function declaration
+    function jumlahTotal(a,b) {
+        var total;
+        total = a + b;
+        return total;
+    }
+    dengan cara function expressio
+    var jumlahTotal = function(a,b) {
+        var total;
+        total = a + b;
+        return total;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.1 ----------------------- Membuat dan menjalankan function -----------------------
+
+
+function kubus(a,b){
+    var volumeA = a**3
+    var volumeB = b**3
+
+    hasil = volumeA + volumeB
+    return hasil
+}
+console.log(kubus(8,3))     atau
+alert(kubus(10.15))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.2 ----------------------- Parameter dan Argument -----------------------
+Parameter itu kyk material / bahan baku yg bisa digunakan function. variabel yg ditulis di dalam kurung pada 
+saat function dibuat digunakan untuk menampung nilai yg nantinya dikirimkan saat function dipanggil.
+Argument itu nilai yg dikirimkan ke Parameter saat function dipanggil
+              Parameter
+function tambah(a,b)
+
+                 Argument
+console.log(tambah(10,9))
+
+
+
+
+function tambah(a,b){
+    return a+b
+}
+var a = parseInt(prompt('masukin angka 1: '))
+var b = parseInt(prompt('masukin angka 2: '))
+console.log(tambah(a,b))
+
+
+
+
+// menggabungkan function nya
+function tambah(a,b){
+    return a+b
+}
+function kali(a,b){
+    return a*b
+}
+var hasil = kali(tambah(2,3),tambah(5,5))
+console.log(hasil)
+
+
+
+
+// penggunaan arguments
+function tambah(){
+    var hasil = 0;
+    for(var i = 0; i < arguments.length; i++){
+        hasil += arguments[i];
+    }
+    return hasil
+}
+console.log(tambah(1,2,3,4,10))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.3 ----------------------- REFACTORING -----------------------
+adalah sebuah proses mengubah kode agar menjadi lebih "baik" tanpa mengubah fungsionalitasnya
+refactioring
+- readability = mudah dibaca saat kolaborasi
+- DRY(don't repeat yourself)
+- testability = mudah di coba
+- performance = saat penggunaan looping,tipe data yg tepat
+- maintaiability = mudah dikelola/dikembangkan
+
+
+
+// contoh refactoring 
+function tambah(a,b){
+    return a*2+b*2
+}
+console.log(hasil)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.4 ----------------------- VARIABLE SCOPE -----------------------
+bagaimana sebuah variabel dapat diakses dalam program.
+block scope itu yg kyk gini {} tapi ini digunakan bahasa C
+function scope ini digunakan bahasa javascript
+
+// global scope / window scope
+var a = 1;
+
+// function scope
+function tes(){
+    var b = 2;
+    console.log(a)
+}
+
+// function scope tapi bisa diakses luar
+function tes(){
+    var a = 2;
+    console.log(window.a)       //gunakan windows.      bisa juga di consol browser
+}
+tes()
+
+// ini bisa mengambil / menimpa var luar
+function tes(){
+    a = 2;          //karna gada var ny,dia menimpa yg di luar function
+}
+tes()
+console.log(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.5 ----------------------- Rekursif / recursion -----------------------
+sebuah fungsi yg memanggil dirinya sendiri
+
+implementasi Rekursif
+- menggantikan looping
+- fibonacci
+- pencarian dan penelusuran pada struktur data list dan tree
+- bahasa pemrograman yg g punya perulangan. contohnya = Haskel, Erlang, Prolog,dll
+- dll
+
+
+// infinity loop juga
+function showangka(n){
+    console.log(n)
+    return showangka(n-1)
+}
+showangka(10)
+
+
+// ini ga looping
+function showAngka(n){
+    if (n === 0){
+        return;
+    }
+    console.log(n);
+    showAngka(n-1);
+}
+showAngka(10)
+
+
+// membuat faktorial
+function faktorial(n){
+    if(n === 0) return 1;
+    return n * faktorial(n-1);
+}
+console.log(faktorial(5))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7.6 ----------------------- Declaration vs Expression -----------------------
+function Expression ini boleh ga punya nama 
+dia itu variabel yg menyimpan function
+- harus di definisikan terlebih dahulu sebelum di panggil
+- lebih powerfull:
+    sebagai closure
+    sebagai arguments untuk function lain
+    IIFE (immediately invoked function Expression)
+
+contohnya:
+var pesan = function(nama){
+    alert('nama mu '+nama)}
+pesan('rafa')
+
